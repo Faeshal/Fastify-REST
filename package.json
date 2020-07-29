@@ -1,0 +1,20 @@
+{
+  "name": "user-fastify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "express-async-handler": "^1.1.4",
+    "fastify": "^3.1.1",
+    "fastify-cli": "^2.0.2",
+    "mongoose": "^5.9.26",
+    "nodemon": "^2.0.4"
+  }
+}
