@@ -1,9 +1,13 @@
+require("pretty-error").start();
 const fastify = require("fastify")();
-const asyncHandler = require("express-async-handler");
-const chalk = require("chalk");
 const PORT = 5000;
 const mongoose = require("mongoose");
 const CONNECTION_URI = "mongodb://localhost:27017/user-fastify";
+const asyncHandler = require("express-async-handler");
+const chalk = require("chalk");
+
+// * Package
+fastify.register(require("fastify-cors"));
 
 // * Routing
 fastify.register(require("./routes/routes"));
