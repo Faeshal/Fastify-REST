@@ -5,9 +5,10 @@ const mongoose = require("mongoose");
 const CONNECTION_URI = "mongodb://localhost:27017/user-fastify";
 const asyncHandler = require("express-async-handler");
 const chalk = require("chalk");
+const cors = require("fastify-cors");
 
 // * Package
-fastify.register(require("fastify-cors"));
+fastify.register(cors);
 
 // * Routing
 fastify.register(require("./routes/routes"));
@@ -22,6 +23,7 @@ mongoose.connect(CONNECTION_URI, {
 mongoose.connection.on("connected", () => {
   console.log(chalk.blueBright("MongoDB connected"));
 });
+mongoose.set("useFindAndModify", false);
 
 // * Server Listen
 const start = asyncHandler(async (err) => {
